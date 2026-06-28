@@ -1,0 +1,105 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { ArrowRight, ShieldCheck } from "lucide-react";
+import { motion } from "framer-motion";
+import { Project } from "@/types";
+import { ImageSlider } from "./ImageSlider";
+import { cn } from "@/lib/utils";
+
+interface ProjectCardProps {
+  project: Project;
+  className?: string;
+  onEnquire?: (project: Project) => void;
+}
+
+export function ProjectCard({ project, className, onEnquire }: ProjectCardProps) {
+  const statusColors: Record<string, string> = {
+    "Under Construction": "bg-brand-blue text-white border border-white/20 shadow-[0_0_24px_rgba(90,161,255,0.45)]",
+    "Completed": "bg-brand-blue text-white border border-white/20 shadow-[0_0_24px_rgba(90,161,255,0.45)]",
+    "Upcoming": "bg-brand-blue text-white border border-white/20 shadow-[0_0_24px_rgba(90,161,255,0.45)]",
+    "Launching Soon": "bg-brand-blue text-white border border-white/20 shadow-[0_0_24px_rgba(90,161,255,0.45)]",
+    "New Launch": "bg-brand-blue text-white border border-white/20 shadow-[0_0_24px_rgba(90,161,255,0.45)] animate-pulse",
+  };
+
+  const currentStatusStyle = statusColors[project.status] || statusColors["Upcoming"];
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -8 }}
+      className={cn("glass-card-premium group relative gpu-accelerated flex flex-col h-full", className)}
+    >
+      {/* Hover Edge Highlight Overlay */}
+      <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-brand-blue/40 to-transparent -translate-y-full group-hover:animate-[scan_2s_linear_infinite] z-20 pointer-events-none" />
+      
+      {/* Image Section */}
+      <div className="relative aspect-[16/10] overflow-hidden">
+        <ImageSlider 
+          images={project.projectCard?.images || []} 
+          autoPlay={true}
+          interval={2000}
+          showArrows={true}
+          showDots={false} 
+          objectFit="contain"
+          className="h-full bg-black/95 transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent z-10" />
+        
+        <div className={cn(
+          "absolute top-4 right-4 px-5 py-2.5 rounded-xl text-[12px] md:text-[14px] font-bold uppercase tracking-[0.25em] shadow-2xl z-20",
+          currentStatusStyle
+        )}>
+          {project.status}
+        </div>
+
+      </div>
+
+      {/* Content Section */}
+      <div className="p-7 space-y-6 relative overflow-hidden flex flex-col flex-grow">
+        {/* Subtle Background Icon removed */}
+
+        <div className="space-y-2">
+          <h3 className="font-heading text-3xl font-bold uppercase tracking-wider text-foreground group-hover:text-brand-blue transition-colors duration-500 leading-none">
+            {project.name}
+          </h3>
+        </div>
+
+        <p className="font-sans text-[16px] text-[--muted] leading-relaxed font-medium flex-grow">
+          {project.projectCard?.shortDescription}
+        </p>
+
+        {/* Feature Tags removed for cleaner aesthetic */}
+
+        {/* Actions */}
+        <div className="flex flex-col sm:flex-row gap-3 pt-2 mt-auto">
+          <Link 
+            suppressHydrationWarning
+            href={`/projects/${project.slug}`}
+            prefetch={false}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-[1.2] bg-brand-blue text-black hover:bg-black hover:text-white hover:scale-95 transition-all py-3 px-3 md:px-4 rounded-xl font-sans text-[11px] md:text-[12px] font-bold uppercase tracking-[0.15em] flex items-center justify-center gap-2 shadow-lg whitespace-nowrap"
+          >
+            View Details <ArrowRight size={14} />
+          </Link>
+          <button 
+            suppressHydrationWarning
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              onEnquire?.(project);
+            }}
+            className="flex-1 bg-gray-100 border border-gray-200 text-black hover:bg-black hover:text-white hover:scale-95 transition-all py-2.5 px-4 rounded-xl font-sans text-[11px] md:text-[12px] font-bold uppercase tracking-[0.15em] whitespace-nowrap shadow-sm"
+          >
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  );
+}

@@ -1,0 +1,123 @@
+{
+  "id": "dolphin-plaza",
+  "slug": "dolphin-plaza",
+  "name": "Dolphin Plaza",
+  "status": "Under Construction",
+  "city": "Sukkur",
+  "location": "Race Course Road, Sukkur",
+  "featured": {
+    "isFeatured": true,
+    "images": [
+      "/dp-images/dpcover.png"
+    ],
+    "tagline": "Premium Commercial Development"
+  },
+  "projectCard": {
+    "images": [
+      "/dp-images/dpcover.png"
+    ],
+    "badges": [
+      "Under Construction",
+      "Commercial Hub"
+    ],
+    "shortDescription": "A 10-story modern high-rise offering prime commercial shops and executive business spaces on Race Course Road, Sukkur."
+  },
+  "detailsPage": {
+    "heroImage": "/dp-images/dpcover.png",
+    "heroThumbnails": [
+      "/dp-images/dpcover.png",
+      "/dp-images/ext/1.webp",
+      "/dp-images/ext/2.webp",
+      "/dp-images/ext/3.webp"
+    ],
+    "overviewImage": "/dp-images/dpcover.png",
+    "fullDescription": "Dolphin Plaza is a prestigious commercial development in Sukkur, designed to combine modern business opportunities and premium corporate experiences within a contemporary architectural environment.\n\nDeveloped with a focus on sophistication, utility, and long-term value, the project features a modern 10-story structure offering prime commercial frontage and high-end business sectors. The development is thoughtfully planned to provide a vibrant commercial atmosphere through open-plan layouts, integrated modern facilities, and a visually striking urban presence.\n\nPositioned in a strategic location, Dolphin Plaza is designed to serve as a premier commercial destination and a high-yield investment opportunity. Beyond infrastructure, Dolphin Plaza represents a growing business hub built around modern operational standards, accessibility, and future-focused growth, creating a destination where commercial activity and corporate excellence coexist seamlessly.",
+    "introduction": "Premier Commercial & Corporate Opportunities",
+    "offerings": [
+      {
+        "icon": "Building",
+        "label": "Commercial & Corporate Hub",
+        "description": "Modern commercial shops and executive corporate offices designed for high utility and maximum visibility. Strategically located to provide premium business opportunities and long-term growth for your investment. This 10-story high-rise is the perfect destination for businesses looking for a prime location in Sukkur."
+      }
+    ],
+    "amenities": [
+      {
+        "icon": "Camera",
+        "label": "Service Alliance SYSTEM"
+      },
+      {
+        "icon": "Layers",
+        "label": "High-speed Elevator"
+      },
+      {
+        "icon": "MapPin",
+        "label": "Prime LOCATION"
+      }
+    ],
+    "unitTypes": [
+      {
+        "type": "Commercial Shops",
+        "size": "Investment Friendly",
+        "price": "Starting from 30 Lacs"
+      },
+      {
+        "type": "Corporate Spaces",
+        "size": "Customizable Layouts",
+        "price": "Contact for Details"
+      }
+    ],
+    "galleryCategories": {
+      "exterior": [
+        "/dp-images/ext/1.webp",
+        "/dp-images/ext/2.webp",
+        "/dp-images/ext/3.webp",
+        "/dp-images/ext/4.webp",
+        "/dp-images/ext/5.webp",
+        "/dp-images/ext/6.webp"
+      ],
+      "interior": [],
+      "layouts": []
+    },
+    "specifications": {
+      "floors": "10 Floors",
+      "totalUnits": "Mixed Inventory",
+      "totalArea": "Race Course Road",
+      "projectType": "Commercial & Corporate Hub",
+      "completionYear": "2027"
+    },
+    "features": [
+      "Service Alliance SYSTEM",
+      "High-speed Elevator",
+      "Prime LOCATION",
+      "10-story modern high-rise structure"
+    ],
+    "investmentBenefits": [
+      "Booking starts from 10%",
+      "2-year installment plan (Shops)",
+      "High Rental Yield Potential",
+      "Strong long-term investment opportunity"
+    ],
+    "landmarks": [
+      {
+        "icon": "MapPin",
+        "name": "Racecourse Road, Sukkur, Pakistan, 65200",
+        "distance": "Exact Location"
+      },
+      {
+        "icon": "Zap",
+        "name": "Strong Connectivity",
+        "distance": "Citywide"
+      },
+      {
+        "icon": "Eye",
+        "name": "Commercial Visibility",
+        "distance": "High"
+      }
+    ],
+    "projectContact": {
+      "phone": "0370 2502769",
+      "facebook": "https://www.facebook.com/profile.php?id=61573224854561"
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.043517454802!2d68.85764047525383!3d27.691456276189914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393798a729e19033%3A0x63359d9c28b5774e!2sRace%20Course%20Rd%2C%20Sukkur%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1714135740000!5m2!1sen!2s"
+  }
+}

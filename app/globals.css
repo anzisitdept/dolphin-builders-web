@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #5aa1ff;
+  --color-brand-blue-light: #7db8ff;
+  --color-brand-blue-dark: #3d7fd9;
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-oswald), system-ui, sans-serif;
+}
+
+:root {
+  --background: #f8fafc;
+  --foreground: #111111; /* Rich Black */
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --border: #e2e8f0;
+  --accent: #5aa1ff;
+  --accent-light: #7db8ff;
+  --accent-dark: #3d7fd9;
+  --bg-primary: #ffffff;
+  --bg-card: #f8fafc;
+  --bg-deep: #f1f5f9;
+  --glow: rgba(90, 161, 255, 0.15);
+  --muted: #475569; /* Darker charcoal gray */
+  --muted-foreground: #64748b;
+}
+
+@layer base {
+  * {
+    @apply border-[--border];
+  }
+  body {
+    @apply bg-[--background] text-[--foreground] transition-colors duration-300 font-sans text-[17px] md:text-[18px];
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading uppercase tracking-widest leading-[0.95];
+  }
+  h1 { @apply text-5xl md:text-8xl; }
+  h2 { @apply text-4xl md:text-7xl; }
+  h3 { @apply text-3xl md:text-5xl; }
+  
+  p {
+    @apply leading-relaxed text-[--muted] font-medium;
+  }
+}
+
+@layer components {
+  .btn-brand {
+    @apply font-sans bg-brand-blue text-black px-10 py-4 rounded-xl font-bold uppercase tracking-[0.2em] text-[13px] md:text-[14px] transition-all duration-300 hover:bg-brand-blue-light hover:shadow-[0_15px_45px_rgba(90,161,255,0.4)] hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-3;
+  }
+  
+  /* Premium Glows */
+  .glow-blue-sm  { box-shadow: 0 0 12px rgba(90,161,255,0.25); }
+  .glow-blue-md  { box-shadow: 0 0 28px rgba(90,161,255,0.30); }
+  .glow-blue-lg  { box-shadow: 0 0 60px rgba(90,161,255,0.15); }
+  .text-glow     { text-shadow: 0 0 15px rgba(90,161,255,0.5); }
+  .border-glow   { box-shadow: 0 0 0 1px rgba(90,161,255,0.3); }
+
+  /* Glassmorphism & Cards */
+  .glass-premium {
+    @apply bg-card/40 backdrop-blur-xl border border-border/40 shadow-2xl;
+  }
+
+  .card-premium {
+    @apply bg-card border border-border/40 rounded-2xl overflow-hidden transition-all duration-500 hover:border-brand-blue/40 shadow-sm;
+  }
+
+  .glass-card-premium {
+    @apply bg-card/60 backdrop-blur-xl border border-border/40 rounded-3xl overflow-hidden transition-all duration-500 hover:border-brand-blue/30 shadow-xl;
+  }
+
+  .section-heading {
+    @apply font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-widest text-foreground leading-[0.9];
+  }
+
+  /* Tactical Readability Utilities */
+  .tactical-label {
+    @apply font-heading text-[16px] md:text-[20px] font-bold uppercase tracking-[0.25em] leading-tight text-brand-blue;
+  }
+
+  .tactical-description {
+    @apply font-sans text-[17px] md:text-[20px] font-medium text-[--muted] leading-relaxed;
+  }
+}
+
+/* Base Reveal Animation for Motion */
+.reveal-init {
+  @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
+}
+
+.reveal-active {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Performance Optimizations */
+@media (max-width: 768px) {
+  .backdrop-blur-2xl, .backdrop-blur-xl, .backdrop-blur-lg {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-heading,
+.italic,
+i,
+em,
+cite {
+  font-style: normal !important;
+  font-weight: 700;
+}
